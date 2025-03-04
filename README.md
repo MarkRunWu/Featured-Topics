@@ -11,7 +11,7 @@ cloned from https://gitlab.com/manuelkostka/discourse/components/featured-topics
   }
   &__heading {
   }
-  &__topic-wrapper {
+  &__topics-wrapper {
   }
   &__topic-container {
   }
