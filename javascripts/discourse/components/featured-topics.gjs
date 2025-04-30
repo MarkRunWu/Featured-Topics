@@ -42,7 +42,8 @@ export default class FeaturedTopics extends Component {
   @action
   async getFeaturedTopics() {
     const tags = this.featuredTags;
-    const params = { order: 'activity',
+    const params = tags.length > 0 ? { order: 'activity', tags } : {
+       order: 'activity'
     }
     const topicList = await this.store.findFiltered('topicList', {
       filter: 'latest',
@@ -75,7 +76,7 @@ export default class FeaturedTopics extends Component {
   }
 
   get featuredTags() {
-    return settings.featured_tags.split('|');
+    return settings.featured_tags.split('|').filter(tag => tag.length > 0);
   }
 
   get showOnRoute() {
