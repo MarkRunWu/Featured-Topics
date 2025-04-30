@@ -47,6 +47,9 @@
       .topic-author {
         margin-top: auto;
       }
+      .topic-author-name {
+        margin-left: 20px;
+      }
       .topic-title {
         @include line-clamp(3);
       }
