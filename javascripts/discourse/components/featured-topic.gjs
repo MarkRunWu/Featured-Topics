@@ -53,7 +53,7 @@ export default class FeaturedTopic extends Component {
         {{/if}}
         <div class='topic-author'>
           <UserLink @user={{@topic.creator}}>
-            {{avatar @topic.creator imageSize='medium'}}
+            {{avatar @topic.creator imageSize='small'}}
             <span class='topic-author-name'>{{@topic.creator.name}}</span>
           </UserLink>
         </div>
