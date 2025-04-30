@@ -41,12 +41,16 @@ export default class FeaturedTopics extends Component {
 
   @action
   async getFeaturedTopics() {
+    const tags = this.featuredTags;
+    const params = tags.length > 0 ? {
+        order: 'activity',
+        tags
+    } : {
+        order: 'activity',
+    }
     const topicList = await this.store.findFiltered('topicList', {
       filter: 'latest',
-      params: {
-        order: 'activity',
-        tags: this.featuredTags,
-      },
+      params,
     });
     this.featuredTopics = topicList.topics;
 
