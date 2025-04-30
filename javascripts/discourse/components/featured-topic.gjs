@@ -16,6 +16,7 @@ export default class FeaturedTopic extends Component {
       href='{{this.unreadUrl}}'
     >
 
+      {{#if this.tag}}
       <div class='featured-topics__topic-tag'>
         <a
           href={{this.tagUrl}}
@@ -23,6 +24,7 @@ export default class FeaturedTopic extends Component {
           class='discourse-tag box'
         >{{this.tag}}</a>
       </div>
+      {{/if}}
 
       {{#if @topic.thumbnails}}
         <div class='featured-topics__topic-thumbnail'>
